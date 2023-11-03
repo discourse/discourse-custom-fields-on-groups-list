@@ -1,0 +1,3 @@
+.group-members {
+  grid-template-columns: 3fr repeat(4, minmax(min-content, 1fr));
+}
