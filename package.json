@@ -1,0 +1,10 @@
+{
+  "name": "discourse-custom-fields-on-groups-list",
+  "version": "0.0.1",
+  "repository": "https://github.com/discourse/discourse-custom-fields-on-groups-list",
+  "author": "Discourse",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-discourse": "^3.1.0"
+  }
+}

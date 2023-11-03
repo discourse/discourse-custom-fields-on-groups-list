@@ -1,0 +1,11 @@
+{{#each this.filteredUserFields as |userField|}}
+  <TableHeaderToggle
+    @class="directory-table__column-header--user-field-{{userField.id}}"
+    @order="true"
+    @asc="true"
+    @translated="true"
+    @field={{userField.name}}
+    @labelKey={{userField.name}}
+    @automatic="true"
+  />
+{{/each}}

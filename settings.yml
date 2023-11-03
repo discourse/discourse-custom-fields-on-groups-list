@@ -1,0 +1,4 @@
+user_custom_field_ids_to_show:
+  type: list
+  list_type: simple
+  default: ""
