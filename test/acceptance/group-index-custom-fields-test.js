@@ -1,7 +1,7 @@
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
-import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 import { fixturesByUrl } from "discourse/tests/helpers/create-pretender";
+import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 import { cloneJSON } from "discourse-common/lib/object";
 
 acceptance("Group Members Index - Custom Fields", function (needs) {
