@@ -54,14 +54,12 @@ acceptance("Group Members Index - Custom Fields", function (needs) {
 
     const rows = document.querySelectorAll(".directory-table__row");
     rows.forEach((row, index) => {
-      const customFieldValue = row
-        .querySelector(
-          ".directory-table__cell--custom-field-34 .directory-table__value"
+      assert
+        .dom(".directory-table__cell--custom-field-34 .directory-table__value", row)
+        .includesText(
+          "this custom field is visible for member",
+          `it shows a custom field value for member at row ${index + 1}`
         )
-        .textContent.trim();
-      assert.ok(
-        /this custom field is visible for member/.test(customFieldValue),
-        `it shows a custom field value for member at row ${index + 1}`
       );
     });
 
@@ -72,7 +70,7 @@ acceptance("Group Members Index - Custom Fields", function (needs) {
       );
     rows.forEach((row) => {
       assert
-        .dom(row.querySelector(".directory-table__cell--custom-field-35"))
+        .dom(".directory-table__cell--custom-field-35", row)
         .doesNotExist(`does not show custom field value in row`);
     });
   });

@@ -2,7 +2,7 @@ import { withPluginApi } from "discourse/lib/plugin-api";
 import { ajax } from "discourse/lib/ajax";
 
 function initialize(api) {
-  const PLUGIN_ID = "discourse-custom-fields-on-group-list";
+  const PLUGIN_ID = "discourse-custom-fields-on-groups-list";
 
   api.modifyClassStatic("model:group", {
     pluginId: PLUGIN_ID,
