@@ -55,12 +55,14 @@ acceptance("Group Members Index - Custom Fields", function (needs) {
     const rows = document.querySelectorAll(".directory-table__row");
     rows.forEach((row, index) => {
       assert
-        .dom(".directory-table__cell--custom-field-34 .directory-table__value", row)
+        .dom(
+          ".directory-table__cell--custom-field-34 .directory-table__value",
+          row
+        )
         .includesText(
           "this custom field is visible for member",
           `it shows a custom field value for member at row ${index + 1}`
-        )
-      );
+        );
     });
 
     assert
