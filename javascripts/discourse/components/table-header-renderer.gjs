@@ -7,8 +7,9 @@ export default class TableHeaderRenderer extends Component {
   idsToShow = settings.user_custom_field_ids_to_show
     .split("|")
     .map((id) => parseInt(id, 10));
-  filteredUserFields = this.args.userFields
-    .filter((field) => this.idsToShow.includes(field.id));
+  filteredUserFields = this.args.userFields.filter((field) =>
+    this.idsToShow.includes(field.id)
+  );
 
   fieldNameToFieldIdMap = this.filteredUserFields.reduce((acc, field) => {
     acc[field.name] = `${USER_FIELD_PREFIX}${field.id}`;
@@ -23,7 +24,9 @@ export default class TableHeaderRenderer extends Component {
 
   constructor() {
     super(...arguments);
-    this._groupIndexController = getOwnerWithFallback(this).lookup("controller:group-index");
+    this._groupIndexController = getOwnerWithFallback(this).lookup(
+      "controller:group-index"
+    );
   }
 
   get order() {

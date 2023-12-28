@@ -21,7 +21,9 @@ export default class CustomUserFieldValueRenderer extends Component {
 
   <template>
     {{#each this.filteredCustomValues as |userField|}}
-      <div class="directory-table__cell directory-table__cell--user-field-{{userField.id}}">
+      <div
+        class="directory-table__cell directory-table__cell--user-field-{{userField.id}}"
+      >
         <span class="directory-table__label">
           <span>{{userField.name}}</span>
         </span>
