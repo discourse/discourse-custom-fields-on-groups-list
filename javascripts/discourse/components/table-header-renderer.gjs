@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
+import TableHeaderToggle from "discourse/components/table-header-toggle";
 import { getOwnerWithFallback } from "discourse-common/lib/get-owner";
-import TableHeaderToggle from "discourse/components/table-header-toggle"
 import { USER_FIELD_PREFIX } from "../initializers/discourse-custom-fields-on-groups-list";
 
 export default class TableHeaderRenderer extends Component {
@@ -8,7 +8,7 @@ export default class TableHeaderRenderer extends Component {
     .split("|")
     .map((id) => parseInt(id, 10));
   filteredUserFields = this.args.userFields
-    .filter((field) => this.idsToShow.includes(field.id))
+    .filter((field) => this.idsToShow.includes(field.id));
 
   fieldNameToFieldIdMap = this.filteredUserFields.reduce((acc, field) => {
     acc[field.name] = `${USER_FIELD_PREFIX}${field.id}`;
