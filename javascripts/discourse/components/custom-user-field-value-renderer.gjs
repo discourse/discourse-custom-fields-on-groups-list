@@ -1,4 +1,5 @@
 import Component from "@glimmer/component";
+import getFieldTitle from "../lib/get-field-title";
 
 export default class CustomUserFieldValueRenderer extends Component {
   get filteredCustomValues() {
@@ -13,7 +14,7 @@ export default class CustomUserFieldValueRenderer extends Component {
       );
       return {
         id: desiredFieldId,
-        name: userField?.name || "",
+        label: getFieldTitle(userField),
         value: customFields[`user_field_${desiredFieldId}`] || "",
       };
     });
@@ -25,7 +26,7 @@ export default class CustomUserFieldValueRenderer extends Component {
         class="directory-table__cell directory-table__cell--user-field-{{userField.id}}"
       >
         <span class="directory-table__label">
-          <span>{{userField.name}}</span>
+          <span>{{userField.label}}</span>
         </span>
         <span class="directory-table__value">
           {{userField.value}}

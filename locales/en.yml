@@ -1,0 +1,5 @@
+en:
+  theme_metadata:
+    settings:
+      user_custom_field_ids_to_show: List of custom field IDs to show as columns in the group members directory
+      show_field_description_on_header: Show field description on group header instead of field name

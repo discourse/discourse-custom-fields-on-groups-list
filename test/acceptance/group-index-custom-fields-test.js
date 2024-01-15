@@ -49,12 +49,14 @@ acceptance("Group Members Index - Custom Fields", function (needs) {
       {
         id: 34,
         name: "My Custom Field 1",
+        description: "Custom Field 1 Description",
         field_type: "text",
         required: true,
       },
       {
         id: 35,
         name: "My Custom Field 2",
+        description: "Custom Field 2 Description",
         field_type: "text",
         required: true,
       },
@@ -153,5 +155,14 @@ acceptance("Group Members Index - Custom Fields", function (needs) {
       ],
       "shows custom field values sorted descending"
     );
+  });
+
+  test("Show description on header", async function (assert) {
+    settings.show_field_description_on_header = true;
+    await visit("/g/discourse");
+
+    assert
+      .dom(".directory-table__column-header--user-field-34")
+      .hasText("Custom Field 1 Description", "shows custom field header");
   });
 });

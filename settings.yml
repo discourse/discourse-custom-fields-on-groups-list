@@ -2,3 +2,6 @@ user_custom_field_ids_to_show:
   type: list
   list_type: simple
   default: ""
+show_field_description_on_header:
+  type: bool
+  default: false
