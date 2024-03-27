@@ -49,12 +49,12 @@ export default class TableHeaderRenderer extends Component {
   <template>
     {{#each this.filteredUserFields as |userField|}}
       <TableHeaderToggle
-        @class="directory-table__column-header--user-field-{{userField.id}}"
         @order={{this.order}}
         @asc={{this.asc}}
         @translated={{true}}
         @field={{getFieldTitle userField}}
         @automatic={{false}}
+        class="directory-table__column-header--user-field-{{userField.id}}"
       />
     {{/each}}
   </template>
