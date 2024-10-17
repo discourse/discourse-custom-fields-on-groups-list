@@ -1,4 +1,5 @@
 import Component from "@glimmer/component";
+import { action } from "@ember/object";
 import TableHeaderToggle from "discourse/components/table-header-toggle";
 import { getOwnerWithFallback } from "discourse-common/lib/get-owner";
 import { USER_FIELD_PREFIX } from "../initializers/discourse-custom-fields-on-groups-list";
@@ -46,9 +47,16 @@ export default class TableHeaderRenderer extends Component {
     this._groupIndexController.set("asc", asc);
   }
 
+  @action
+  updateOrder(field, asc) {
+    this.order = field;
+    this.asc = asc;
+  }
+
   <template>
     {{#each this.filteredUserFields as |userField|}}
       <TableHeaderToggle
+        @onToggle={{this.updateOrder}}
         @order={{this.order}}
         @asc={{this.asc}}
         @translated={{true}}
