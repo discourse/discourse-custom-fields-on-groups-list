@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import TableHeaderToggle from "discourse/components/table-header-toggle";
-import { getOwnerWithFallback } from "discourse-common/lib/get-owner";
+import { getOwnerWithFallback } from "discourse/lib/get-owner";
 import { USER_FIELD_PREFIX } from "../initializers/discourse-custom-fields-on-groups-list";
 import getFieldTitle from "../lib/get-field-title";
 
