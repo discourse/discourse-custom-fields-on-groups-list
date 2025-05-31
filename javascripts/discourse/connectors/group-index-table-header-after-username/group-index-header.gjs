@@ -1,6 +1,6 @@
 import Component from "@ember/component";
-import TableHeaderRenderer from "_fake_theme/discourse/components/table-header-renderer";
 import { tagName } from "@ember-decorators/component";
+import TableHeaderRenderer from "../../components/table-header-renderer";
 
 @tagName("")
 export default class GroupIndexHeader extends Component {

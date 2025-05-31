@@ -1,6 +1,6 @@
 import Component from "@ember/component";
-import CustomUserFieldValueRenderer from "_fake_theme/discourse/components/custom-user-field-value-renderer";
 import { tagName } from "@ember-decorators/component";
+import CustomUserFieldValueRenderer from "../../components/custom-user-field-value-renderer";
 
 @tagName("")
 export default class CustomFieldValues extends Component {
