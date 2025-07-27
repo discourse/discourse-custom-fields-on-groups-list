@@ -1,7 +1,7 @@
 import { click, visit } from "@ember/test-helpers";
 import { test } from "qunit";
 import { cloneJSON } from "discourse/lib/object";
-import { fixturesByUrl } from "discourse/tests/helpers/create-pretender";
+import groupFixtures from "discourse/tests/fixtures/group-fixtures";
 import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Group Members Index - Custom Fields", function (needs) {
@@ -10,7 +10,7 @@ acceptance("Group Members Index - Custom Fields", function (needs) {
   needs.pretender((server, helper) => {
     server.get("/groups/discourse/members.json", ({ queryParams }) => {
       const response = cloneJSON(
-        fixturesByUrl["/groups/discourse/members.json"]
+        groupFixtures["/groups/discourse/members.json"]
       );
 
       // change the original order to not be alphabetical
