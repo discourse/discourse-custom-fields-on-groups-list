@@ -25,6 +25,6 @@ export default {
   name: "discourse-custom-fields-on-groups-list",
 
   initialize() {
-    withPluginApi("1.2.0", initialize);
+    withPluginApi(initialize);
   },
 };
